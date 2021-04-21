@@ -91,6 +91,7 @@ class EnglishWordsController extends GetxController {
 
   void getOneWord() {
     // state = EnglishWordStates.waiting as Rx<EnglishWordStates>;
+    // Future does not go well with FP, Task takes the place.
     Task<EnglishWord>(() => wordService.getOnePost())
         .attempt()
         .map(
